@@ -1,0 +1,65 @@
+@import url(https://db.onlinewebfonts.com/c/a0faafb86752ddff4c3ec18939c68830?family=Roc+Grotesk+W05+Wide);
+
+@font-face {
+    font-family: "TestManuka-Regular";
+    src: url("fonts\TestManuka-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.copyPrompt {
+    cursor: pointer;
+    margin: 0;
+}
+
+header img {
+    width: 100px;
+    display: block;
+    margin: 20px 0 0 auto;
+}
+
+body {
+    font-size: 8px;
+    font-family: "Roc Grotesk W05 Wide";
+    margin: 0 30px;
+    line-height: 18px;
+}
+
+summary {
+    font-size: 1rem;
+    font-family: "TestManuka-Regular";
+    color: #232c34;
+    padding: 10px 0 10px 10px;
+    background-color: #fbd4bc;
+    margin-bottom: 10px;
+}
+
+details>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+p {
+    font-size: 0.7rem;
+    padding-bottom: 10px;
+    border-bottom: 1.5px dotted rgba(167, 169, 164, 0.2);
+    width: 88%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+button img {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+}
+
+button img:hover {
+    filter: invert(0.5);
+}
