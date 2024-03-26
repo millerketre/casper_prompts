@@ -1,30 +1,16 @@
-function copyToClipboard(event) {
-  const button = event.currentTarget;
-  const promptElement = button.parentNode.querySelector('.copyPrompt');
+const copySections = (e) => {
+   const textElement = e.target.tagName == 'P'
+      ? e.target
+      : e.target.parentElement.previousElementSibling
 
-  if (promptElement) {
-    let promptText = promptElement.textContent.trim();
-    if (promptText) {
-      navigator.clipboard.writeText(promptText).then(
-        function () {
-          console.log('Copying to clipboard was successful!');
-        },
-        function (err) {
-          console.error('Could not copy text: ', err);
-        }
-      );
-    } else {
-      console.error('Prompt does not contain any text to copy.');
-    }
-  } else {
-    console.error('Prompt element not found.');
-  }
+   navigator.clipboard.writeText(textElement.textContent.trim())
+      .then(() => console.log('Ok'))
+      .catch(e => console.error(`Error accured: ${e}`))
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const copyButtons = document.querySelectorAll('details > button');
+document.addEventListener('DOMContentLoaded', () => {
+   document.querySelectorAll('details > section').forEach(s => {
+      s.addEventListener('click', copySections)
+   })
 
-  copyButtons.forEach((copyButton) => {
-    copyButton.addEventListener('click', copyToClipboard);
-  });
-});
+})
